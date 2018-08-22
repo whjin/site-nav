@@ -322,7 +322,7 @@ article.item ul li a:hover {
 
 .item ul li:hover {
     -o-box-shadow: 0 0 3px 0 #0e90d2, 0 1px 6px 0 #888;
-    box-shadow: 0 0 3px 0 #0e90d2, 0 1px 6px 0 #888;
+    box-shadow: 0 0 3px 0px #0e90d2, 0 1px 6px 0 #888;
     transform: translateY(-3px);
 }
 
@@ -343,7 +343,7 @@ article.item ul li a:hover {
 }
 
 .book .off:after {
-    content: "";
+    content: "已下架";
     position: absolute;
     color: #F00;
     left: 50%;
