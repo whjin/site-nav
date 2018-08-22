@@ -227,27 +227,6 @@ a {
     color: #000;
 }
 
-.sidebar li.side-about {
-    background: #31AAE8;
-    cursor: pointer;
-    transition: .5s;
-    margin-top: 20px;
-    padding: 0;
-}
-
-.sidebar li.side-about a {
-    color: #FFF;
-    display: block;
-    width: 100%;
-    line-height: 34px;
-}
-
-.sidebar li.side-about:hover {
-    border-radius: 10px;
-    border: none;
-    background: #1A9DE0;
-}
-
 .sidebar_list {
     transition: .5s;
 }
@@ -296,32 +275,6 @@ a {
     margin-bottom: 10px;
 }
 
-.mainarea ul li .tip-pop {
-    position: absolute;
-    top: 100%;
-    left: 20%;
-    padding: 5px;
-    display: none;
-    border-radius: 5px;
-    background: #FFF;
-    min-width: 150px;
-    text-align: left;
-    box-shadow: 0 0 2px 2px #CCC;
-    z-index: 10;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #0e90d2;
-}
-
-.mainarea ul li:hover .tip-pop {
-    display: block;
-}
-
-.mainarea ul li a sup {
-    color: #F00;
-    font-size: 12px;
-}
-
 .mainarea ul li a:hover {
     text-decoration: none;
 }
@@ -351,11 +304,6 @@ article.item ul li a:hover {
     text-decoration: underline;
 }
 
-.item {
-    -webkit-animation: down-up .5s;
-    animation: down-up .5s;
-}
-
 .item ul {
     padding: 5px 0;
     margin: 20px 0 0 0;
@@ -373,8 +321,8 @@ article.item ul li a:hover {
 }
 
 .item ul li:hover {
-    -o-box-shadow: 0 0 3px 0px #0e90d2, 0px 1px 6px 0px #888;
-    box-shadow: 0 0 3px 0px #0e90d2, 0px 1px 6px 0px #888;
+    -o-box-shadow: 0 0 3px 0 #0e90d2, 0 1px 6px 0 #888;
+    box-shadow: 0 0 3px 0 #0e90d2, 0 1px 6px 0 #888;
     transform: translateY(-3px);
 }
 
@@ -395,7 +343,7 @@ article.item ul li a:hover {
 }
 
 .book .off:after {
-    content: "已下架";
+    content: "";
     position: absolute;
     color: #F00;
     left: 50%;
@@ -481,58 +429,3 @@ article.item ul li a:hover {
     box-shadow: none;
     transform: none;
 }
-
-/*about*/
-
-.about .mod {
-    margin-top: 13px;
-    border: none;
-}
-
-.about .mod h2 {
-    color: #0e90d2;
-    margin-bottom: 20px;
-}
-
-.about .mod a {
-    color: #0e90d2;
-}
-
-.about .mod p {
-    line-height: 1.5;
-}
-
-/*参与*/
-
-.about .part-in a {
-    display: inline-block;
-    padding: 5px 8px;
-    border-radius: 4px;
-    margin-right: 5px;
-    color: #FFF;
-}
-
-.part-in a:hover {
-    text-decoration: none;
-}
-
-.part-in .suggest {
-    background: #47524C;
-}
-
-.part-in .new-cont {
-    background: #2975C2;
-}
-
-.part-in .exp {
-    background: #4AB232;
-}
-
-.part-in .error {
-    background: #FF5F52;
-}
-
-.part-in .update-log {
-    background: #EBAE2C;
-}
-
