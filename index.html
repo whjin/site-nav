@@ -17,12 +17,15 @@
     <link type="text/css" rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div class="scroll-top opacity">
+    <span class="arrow-icon"></span>
+</div>
 <article>
-    <header id='header'>
+    <header id='header' class="clearfix">
         <h1>前端网址导航
             <sup>
                 <a href="https://github.com/whjin/site-nav" target="_blank" title="Github">
-                    <svg class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                    <svg class="octicon octicon-mark-github" viewBox="0 0 24 24" version="1.1" width="24" height="24"
                          aria-hidden="true">
                         <path fill-rule="evenodd"
                               d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
@@ -30,6 +33,11 @@
                 </a>
             </sup>
         </h1>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
     </header>
     <section class="layout main-wrap  content">
         <section class='col-main clearfix'>
@@ -107,9 +115,7 @@
                     <section class="sub_mod">
                         <h4 class="sub_title">网页特效库</h4>
                         <ul>
-                            <li><a href="http://www.5iweb.com.cn/"
-                                   target="_blank">5iweb-网页特效库</a></li>
-                            </li>
+                            <li><a href="http://www.5iweb.com.cn/" target="_blank">网页特效库</a></li>
                         </ul>
                     </section>
                 </section>
@@ -407,14 +413,29 @@
         $(window).scroll(function () {
 
             var $Height = $(window).scrollTop();
-
-            if ($Height > 105) {
+            if ($Height === 0) {
+                $('.scroll-top').addClass('opacity');
+            } else {
+                $('.scroll-top').removeClass('opacity');
+            }
+            if ($Height > 100) {
+                $(".scroll-top").fadeIn(500);
                 $(".sidebar_list").addClass('over');
             } else {
+                $(".scroll-top").fadeOut(500);
                 $(".sidebar_list").removeClass('over');
+
             }
         });
+        $('.scroll-top').on('click', function () {
+            $('html,body').animate({scrollTop: 0}, 500)
+        });
         $('.col-main .mainarea').css("min-height", $win - 269 + 'px');
+        if ($(document.body).width() < 768) {
+            $('.menu ,.sidebar_list li').on('click', function () {
+                $('.sidebar_list').toggle();
+            });
+        }
     })
 </script>
 </body>
