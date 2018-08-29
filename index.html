@@ -403,15 +403,20 @@
         var $li = $("aside ul li");
         var $area = $("article.mainarea");
         var $win = $(window).height();
+        var $Width = $(window).width();
         /*显示不同区块*/
         $li.click(function () {
             $(this).addClass('cur').siblings().removeClass('cur');
             var $que = $(this).index();
             $area.eq($que).show().siblings("article").hide();
         });
+        if ($Width < 768) {
+            $('.menu ,.sidebar_list li').on('click', function () {
+                $('.sidebar_list').toggle();
+            });
+        }
         /*页面向下滚动侧边栏和主内容进行相应行为*/
         $(window).scroll(function () {
-
             var $Height = $(window).scrollTop();
             if ($Height === 0) {
                 $('.scroll-top').addClass('opacity');
@@ -431,11 +436,6 @@
             $('html,body').animate({scrollTop: 0}, 500)
         });
         $('.col-main .mainarea').css("min-height", $win - 269 + 'px');
-        if ($(document.body).width() < 768) {
-            $('.menu ,.sidebar_list li').on('click', function () {
-                $('.sidebar_list').toggle();
-            });
-        }
     })
 </script>
 </body>
